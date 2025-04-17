@@ -1,5 +1,6 @@
 ﻿using back_end.Model;
 using back_end.Services;
+using back_end.Utilities.Extensions;
 using back_end.Utilities.Provider;
 using FastEndpoints;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -39,16 +40,16 @@ public class GooglePostAuth :
             return new ErrorResponse() { Message = "Invalid token" };
 
         var email = payload.GetValueOrDefault("email", "").ToString();
-        var username = payload.GetValueOrDefault("name", "").ToString();
+        var username = payload.GetValueOrDefault("given_name", "").ToString();
         var picture = payload.GetValueOrDefault("picture", "").ToString();
 
-        if (email is null)
-            return new ErrorResponse() { Message = "Token do not contain email" };
+        if (email is null || username is null)
+            return new ErrorResponse() { Message = "Invalid Token" };
 
         var user = await UserManager.FindByEmailAsync(email!);
         if (user == null)
         {
-            user = new() { Email = email, UserName = username, ProfilePicture = picture };
+            user = new() { Email = email, UserName = username.RemoveDiacritics(), ProfilePicture = picture };
 
             var createUser = await CreateGoogleUser(user);
             if (!createUser.Succeeded)

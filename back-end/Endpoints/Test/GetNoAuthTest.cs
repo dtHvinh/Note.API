@@ -2,11 +2,11 @@
 
 namespace back_end.Endpoints.Test;
 
-public class GetTest : EndpointWithoutRequest<string>
+public class GetNoAuthTest : EndpointWithoutRequest<string>
 {
     public override void Configure()
     {
-        Get("/api/test");
+        Get("/api/test/no-auth");
         AllowAnonymous();
     }
 

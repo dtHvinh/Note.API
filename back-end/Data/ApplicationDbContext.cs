@@ -8,6 +8,8 @@ namespace back_end.Data;
 public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
     : IdentityDbContext<ApplicationUser, IdentityRole<int>, int>(options)
 {
+    public DbSet<Block> Blocks { get; set; } = default!;
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.Entity<ApplicationUser>(cf =>
@@ -19,6 +21,8 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
             cf.Ignore(e => e.AccessFailedCount);
             cf.Ignore(e => e.NormalizedEmail);
             cf.Ignore(e => e.ConcurrencyStamp);
+            cf.Ignore(e => e.LockoutEnd);
+            cf.Ignore(e => e.UserName);
         });
 
         base.OnModelCreating(builder);

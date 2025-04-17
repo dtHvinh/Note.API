@@ -1,0 +1,85 @@
+2025-04-16 06:07:33.018 +07:00 [INF] Registered 4 endpoints in 1.530 milliseconds.
+2025-04-16 06:07:33.158 +07:00 [INF] User profile is available. Using 'C:\Users\admin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-16 06:07:33.646 +07:00 [INF] Now listening on: https://localhost:7050
+2025-04-16 06:07:33.648 +07:00 [INF] Now listening on: http://localhost:5133
+2025-04-16 06:07:33.851 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-16 06:07:33.853 +07:00 [INF] Hosting environment: Development
+2025-04-16 06:07:33.854 +07:00 [INF] Content root path: D:\dev\myproject\a\back-end\back-end
+2025-04-16 06:08:32.784 +07:00 [INF] CORS policy execution successful.
+2025-04-16 06:08:32.803 +07:00 [INF] CORS policy execution successful.
+2025-04-16 06:09:05.221 +07:00 [INF] Registered 4 endpoints in 770 milliseconds.
+2025-04-16 06:09:05.318 +07:00 [INF] User profile is available. Using 'C:\Users\admin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-16 06:09:05.672 +07:00 [INF] Now listening on: https://localhost:7050
+2025-04-16 06:09:05.674 +07:00 [INF] Now listening on: http://localhost:5133
+2025-04-16 06:09:05.746 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-16 06:09:05.747 +07:00 [INF] Hosting environment: Development
+2025-04-16 06:09:05.748 +07:00 [INF] Content root path: D:\dev\myproject\a\back-end\back-end
+2025-04-16 06:09:11.697 +07:00 [INF] CORS policy execution successful.
+2025-04-16 06:09:11.710 +07:00 [INF] CORS policy execution successful.
+2025-04-16 06:34:09.730 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-04-16 06:34:09.763 +07:00 [INF] Applying migration '20250415231311_OverrideUserName'.
+2025-04-16 06:34:24.040 +07:00 [INF] Registered 4 endpoints in 240 milliseconds.
+2025-04-16 06:34:24.089 +07:00 [INF] User profile is available. Using 'C:\Users\admin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-16 06:34:24.201 +07:00 [INF] Now listening on: https://localhost:7050
+2025-04-16 06:34:24.204 +07:00 [INF] Now listening on: http://localhost:5133
+2025-04-16 06:34:24.261 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-16 06:34:24.262 +07:00 [INF] Hosting environment: Development
+2025-04-16 06:34:24.263 +07:00 [INF] Content root path: D:\dev\myproject\a\back-end\back-end
+2025-04-16 06:35:07.679 +07:00 [INF] CORS policy execution successful.
+2025-04-16 06:35:07.692 +07:00 [INF] CORS policy execution successful.
+2025-04-16 06:40:29.050 +07:00 [INF] Registered 4 endpoints in 227 milliseconds.
+2025-04-16 06:40:29.094 +07:00 [INF] User profile is available. Using 'C:\Users\admin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-16 06:40:29.281 +07:00 [INF] Now listening on: https://localhost:7050
+2025-04-16 06:40:29.283 +07:00 [INF] Now listening on: http://localhost:5133
+2025-04-16 06:40:29.351 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-16 06:40:29.352 +07:00 [INF] Hosting environment: Development
+2025-04-16 06:40:29.353 +07:00 [INF] Content root path: D:\dev\myproject\a\back-end\back-end
+2025-04-16 06:40:43.360 +07:00 [INF] CORS policy execution successful.
+2025-04-16 06:40:43.374 +07:00 [INF] CORS policy execution successful.
+2025-04-16 06:40:54.828 +07:00 [INF] Registered 4 endpoints in 788 milliseconds.
+2025-04-16 06:40:54.925 +07:00 [INF] User profile is available. Using 'C:\Users\admin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-16 06:40:55.229 +07:00 [INF] Now listening on: https://localhost:7050
+2025-04-16 06:40:55.230 +07:00 [INF] Now listening on: http://localhost:5133
+2025-04-16 06:40:55.305 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-16 06:40:55.306 +07:00 [INF] Hosting environment: Development
+2025-04-16 06:40:55.307 +07:00 [INF] Content root path: D:\dev\myproject\a\back-end\back-end
+2025-04-16 06:43:11.305 +07:00 [INF] CORS policy execution successful.
+2025-04-16 06:43:11.319 +07:00 [INF] CORS policy execution successful.
+2025-04-16 06:45:35.710 +07:00 [INF] Registered 4 endpoints in 987 milliseconds.
+2025-04-16 06:45:35.784 +07:00 [INF] User profile is available. Using 'C:\Users\admin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-16 06:45:36.058 +07:00 [INF] Now listening on: https://localhost:7050
+2025-04-16 06:45:36.059 +07:00 [INF] Now listening on: http://localhost:5133
+2025-04-16 06:45:36.150 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-16 06:45:36.151 +07:00 [INF] Hosting environment: Development
+2025-04-16 06:45:36.152 +07:00 [INF] Content root path: D:\dev\myproject\a\back-end\back-end
+2025-04-16 06:45:41.505 +07:00 [INF] CORS policy execution successful.
+2025-04-16 06:45:41.525 +07:00 [INF] CORS policy execution successful.
+2025-04-16 06:46:50.936 +07:00 [INF] Registered 4 endpoints in 262 milliseconds.
+2025-04-16 06:46:50.982 +07:00 [INF] User profile is available. Using 'C:\Users\admin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-16 06:46:51.108 +07:00 [INF] Now listening on: https://localhost:7050
+2025-04-16 06:46:51.109 +07:00 [INF] Now listening on: http://localhost:5133
+2025-04-16 06:46:51.155 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-16 06:46:51.156 +07:00 [INF] Hosting environment: Development
+2025-04-16 06:46:51.157 +07:00 [INF] Content root path: D:\dev\myproject\a\back-end\back-end
+2025-04-16 06:47:09.771 +07:00 [INF] CORS policy execution successful.
+2025-04-16 06:47:09.790 +07:00 [INF] CORS policy execution successful.
+2025-04-16 06:47:11.157 +07:00 [INF] Setting HTTP status code 200.
+2025-04-16 06:47:11.160 +07:00 [INF] Writing value of type 'AuthResponse' as Json.
+2025-04-16 06:48:15.449 +07:00 [INF] Registered 4 endpoints in 231 milliseconds.
+2025-04-16 06:48:15.496 +07:00 [INF] User profile is available. Using 'C:\Users\admin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-16 06:48:15.617 +07:00 [INF] Now listening on: https://localhost:7050
+2025-04-16 06:48:15.618 +07:00 [INF] Now listening on: http://localhost:5133
+2025-04-16 06:48:15.664 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-16 06:48:15.665 +07:00 [INF] Hosting environment: Development
+2025-04-16 06:48:15.666 +07:00 [INF] Content root path: D:\dev\myproject\a\back-end\back-end
+2025-04-16 06:48:23.038 +07:00 [INF] CORS policy execution successful.
+2025-04-16 06:48:23.049 +07:00 [INF] CORS policy execution successful.
+2025-04-16 06:48:45.300 +07:00 [INF] Registered 4 endpoints in 254 milliseconds.
+2025-04-16 06:48:45.357 +07:00 [INF] User profile is available. Using 'C:\Users\admin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-16 06:48:45.500 +07:00 [INF] Now listening on: https://localhost:7050
+2025-04-16 06:48:45.502 +07:00 [INF] Now listening on: http://localhost:5133
+2025-04-16 06:48:45.562 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-16 06:48:45.563 +07:00 [INF] Hosting environment: Development
+2025-04-16 06:48:45.564 +07:00 [INF] Content root path: D:\dev\myproject\a\back-end\back-end
+2025-04-16 06:48:51.904 +07:00 [INF] CORS policy execution successful.
+2025-04-16 06:48:51.916 +07:00 [INF] CORS policy execution successful.
