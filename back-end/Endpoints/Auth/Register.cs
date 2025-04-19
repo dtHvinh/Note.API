@@ -25,7 +25,7 @@ public class Register : Endpoint<RegisterRequest, RegisterResponse>
 
     public override void Configure()
     {
-        Post("/auth/register");
+        Post("register");
         AllowAnonymous();
         Summary(s =>
         {

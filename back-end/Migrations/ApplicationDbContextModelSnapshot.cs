@@ -211,8 +211,11 @@ namespace back_end.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("text");
 
-                    b.Property<int>("BlockAuthorId")
+                    b.Property<int>("AuthorId")
                         .HasColumnType("integer");
+
+                    b.PrimitiveCollection<string[]>("ChildrenId")
+                        .HasColumnType("text[]");
 
                     b.Property<DateTimeOffset>("CreationDate")
                         .HasColumnType("timestamp with time zone");
@@ -227,7 +230,7 @@ namespace back_end.Migrations
                     b.Property<DateTimeOffset>("LastUpdated")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("ParentId")
+                    b.Property<string>("ParentObjectId")
                         .HasColumnType("text");
 
                     b.Property<string>("Type")
@@ -239,11 +242,54 @@ namespace back_end.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BlockAuthorId");
+                    b.HasIndex("AuthorId");
 
                     b.HasIndex("UpdateAuthorId");
 
                     b.ToTable("Blocks");
+                });
+
+            modelBuilder.Entity("back_end.Model.Page", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("AuthorId")
+                        .HasColumnType("integer");
+
+                    b.PrimitiveCollection<string[]>("ChildrenId")
+                        .HasColumnType("text[]");
+
+                    b.Property<DateTimeOffset>("CreationDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsArchived")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("IsInTrash")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTimeOffset>("LastUpdated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ParentObjectId")
+                        .HasColumnType("text");
+
+                    b.Property<int>("UpdateAuthorId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AuthorId");
+
+                    b.HasIndex("UpdateAuthorId");
+
+                    b.ToTable("Pages");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -299,9 +345,9 @@ namespace back_end.Migrations
 
             modelBuilder.Entity("back_end.Model.Block", b =>
                 {
-                    b.HasOne("back_end.Model.ApplicationUser", "BlockAuthor")
+                    b.HasOne("back_end.Model.ApplicationUser", "Author")
                         .WithMany()
-                        .HasForeignKey("BlockAuthorId")
+                        .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -311,7 +357,50 @@ namespace back_end.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("BlockAuthor");
+                    b.Navigation("Author");
+
+                    b.Navigation("UpdateAuthor");
+                });
+
+            modelBuilder.Entity("back_end.Model.Page", b =>
+                {
+                    b.HasOne("back_end.Model.ApplicationUser", "Author")
+                        .WithMany()
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("back_end.Model.ApplicationUser", "UpdateAuthor")
+                        .WithMany()
+                        .HasForeignKey("UpdateAuthorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.OwnsOne("back_end.Model.PageIcon", "PageIcon", b1 =>
+                        {
+                            b1.Property<Guid>("PageId")
+                                .HasColumnType("uuid");
+
+                            b1.Property<string>("Data")
+                                .IsRequired()
+                                .HasColumnType("text");
+
+                            b1.Property<string>("Type")
+                                .IsRequired()
+                                .HasColumnType("character varying");
+
+                            b1.HasKey("PageId");
+
+                            b1.ToTable("Pages");
+
+                            b1.WithOwner()
+                                .HasForeignKey("PageId");
+                        });
+
+                    b.Navigation("Author");
+
+                    b.Navigation("PageIcon")
+                        .IsRequired();
 
                     b.Navigation("UpdateAuthor");
                 });

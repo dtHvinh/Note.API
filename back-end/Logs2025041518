@@ -1,9 +1,0 @@
-2025-04-15 18:54:15.839 +07:00 [INF] Registered 4 endpoints in 651 milliseconds.
-2025-04-15 18:54:15.895 +07:00 [INF] User profile is available. Using 'C:\Users\admin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
-2025-04-15 18:54:16.025 +07:00 [INF] Now listening on: https://localhost:7050
-2025-04-15 18:54:16.027 +07:00 [INF] Now listening on: http://localhost:5133
-2025-04-15 18:54:16.097 +07:00 [INF] Application started. Press Ctrl+C to shut down.
-2025-04-15 18:54:16.098 +07:00 [INF] Hosting environment: Development
-2025-04-15 18:54:16.099 +07:00 [INF] Content root path: D:\dev\myproject\a\back-end\back-end
-2025-04-15 18:57:33.934 +07:00 [INF] CORS policy execution successful.
-2025-04-15 18:57:33.946 +07:00 [INF] CORS policy execution successful.

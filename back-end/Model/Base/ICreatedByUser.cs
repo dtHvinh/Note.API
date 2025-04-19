@@ -3,6 +3,6 @@
 public interface ICreatedByUser<TUserKey>
 {
     DateTimeOffset CreationDate { get; set; }
-    TUserKey BlockAuthorId { get; set; }
-    ApplicationUser? BlockAuthor { get; set; }
+    TUserKey AuthorId { get; set; }
+    ApplicationUser? Author { get; set; }
 }

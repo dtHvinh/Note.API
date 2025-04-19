@@ -26,7 +26,7 @@ public class FetchUrlData : EndpointWithoutRequest<FetchUrlResponse>
 {
     public override void Configure()
     {
-        Get("/api/fetch-url");
+        Get("fetch-url");
         AllowAnonymous();
     }
 

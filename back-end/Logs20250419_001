@@ -1,0 +1,16 @@
+2025-04-19 12:34:40.853 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-04-19 12:34:40.886 +07:00 [INF] Applying migration '20250419053434_AddNameToPage'.
+2025-04-19 12:36:13.464 +07:00 [INF] Registered 4 endpoints in 272 milliseconds.
+2025-04-19 12:36:13.522 +07:00 [INF] User profile is available. Using 'C:\Users\admin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-19 12:36:13.681 +07:00 [INF] Now listening on: https://localhost:7050
+2025-04-19 12:36:13.684 +07:00 [INF] Now listening on: http://localhost:5133
+2025-04-19 12:36:13.750 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-19 12:36:13.752 +07:00 [INF] Hosting environment: Development
+2025-04-19 12:36:13.754 +07:00 [INF] Content root path: D:\dev\myproject\a\back-end\back-end
+2025-04-19 12:36:25.320 +07:00 [INF] Registered 4 endpoints in 261 milliseconds.
+2025-04-19 12:36:25.374 +07:00 [INF] User profile is available. Using 'C:\Users\admin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-19 12:36:25.500 +07:00 [INF] Now listening on: https://localhost:7050
+2025-04-19 12:36:25.502 +07:00 [INF] Now listening on: http://localhost:5133
+2025-04-19 12:36:25.562 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-19 12:36:25.563 +07:00 [INF] Hosting environment: Development
+2025-04-19 12:36:25.564 +07:00 [INF] Content root path: D:\dev\myproject\a\back-end\back-end

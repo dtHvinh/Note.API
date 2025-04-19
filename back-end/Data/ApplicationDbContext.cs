@@ -9,6 +9,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     : IdentityDbContext<ApplicationUser, IdentityRole<int>, int>(options)
 {
     public DbSet<Block> Blocks { get; set; } = default!;
+    public DbSet<Page> Pages { get; set; } = default!;
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

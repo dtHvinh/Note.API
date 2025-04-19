@@ -33,6 +33,7 @@ namespace back_end.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    ProfilePicture = table.Column<string>(type: "text", nullable: true),
                     UserName = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
@@ -40,8 +41,7 @@ namespace back_end.Migrations
                     PasswordHash = table.Column<string>(type: "text", nullable: true),
                     SecurityStamp = table.Column<string>(type: "text", nullable: true),
                     ConcurrencyStamp = table.Column<string>(type: "text", nullable: true),
-                    PhoneNumber = table.Column<string>(type: "text", nullable: true),
-                    LockoutEnd = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true)
+                    PhoneNumber = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -154,6 +154,72 @@ namespace back_end.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Blocks",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "text", nullable: false),
+                    Type = table.Column<string>(type: "text", nullable: false),
+                    Data = table.Column<string>(type: "jsonb", nullable: false),
+                    IsArchived = table.Column<bool>(type: "boolean", nullable: false),
+                    CreationDate = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
+                    LastUpdated = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
+                    ParentObjectId = table.Column<string>(type: "text", nullable: true),
+                    ChildrenId = table.Column<string[]>(type: "text[]", nullable: false),
+                    AuthorId = table.Column<int>(type: "integer", nullable: false),
+                    UpdateAuthorId = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Blocks", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Blocks_AspNetUsers_AuthorId",
+                        column: x => x.AuthorId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Blocks_AspNetUsers_UpdateAuthorId",
+                        column: x => x.UpdateAuthorId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Pages",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    CreationDate = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
+                    LastUpdated = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
+                    IsArchived = table.Column<bool>(type: "boolean", nullable: false),
+                    IsInTrash = table.Column<bool>(type: "boolean", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    PageIcon_Type = table.Column<string>(type: "character varying", nullable: false),
+                    PageIcon_Data = table.Column<string>(type: "text", nullable: false),
+                    AuthorId = table.Column<int>(type: "integer", nullable: false),
+                    UpdateAuthorId = table.Column<int>(type: "integer", nullable: false),
+                    ParentObjectId = table.Column<string>(type: "text", nullable: true),
+                    ChildrenId = table.Column<string[]>(type: "text[]", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Pages", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Pages_AspNetUsers_AuthorId",
+                        column: x => x.AuthorId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Pages_AspNetUsers_UpdateAuthorId",
+                        column: x => x.UpdateAuthorId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -190,6 +256,26 @@ namespace back_end.Migrations
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Blocks_AuthorId",
+                table: "Blocks",
+                column: "AuthorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Blocks_UpdateAuthorId",
+                table: "Blocks",
+                column: "UpdateAuthorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Pages_AuthorId",
+                table: "Pages",
+                column: "AuthorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Pages_UpdateAuthorId",
+                table: "Pages",
+                column: "UpdateAuthorId");
         }
 
         /// <inheritdoc />
@@ -209,6 +295,12 @@ namespace back_end.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Blocks");
+
+            migrationBuilder.DropTable(
+                name: "Pages");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

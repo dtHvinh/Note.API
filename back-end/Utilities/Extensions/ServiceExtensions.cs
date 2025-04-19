@@ -1,4 +1,5 @@
-﻿using back_end.Data;
+﻿using back_end.Attributes;
+using back_end.Data;
 using back_end.Model;
 using back_end.Services;
 using back_end.Utilities.Options;
@@ -9,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using Serilog.Events;
+using System.Reflection;
 using System.Text;
 using static back_end.Utilities.Names.Constants;
 
@@ -31,7 +33,7 @@ public static class ServiceExtensions
           {
               e.WriteTo.Console();
 
-              e.WriteTo.File("D:\\dev\\myproject\\a\\back-end\\back-end\\Logs", rollingInterval: RollingInterval.Hour);
+              e.WriteTo.File("D:\\dev\\myproject\\a\\back-end\\back-end\\Logs", rollingInterval: RollingInterval.Day);
               e.MinimumLevel.Override("Microsoft.EntityFrameworkCore.Database.Command", LogEventLevel.Warning)
               .MinimumLevel.Override("Microsoft.AspNetCore.Hosting", LogEventLevel.Warning)
               .MinimumLevel.Override("Microsoft.AspNetCore.Mvc", LogEventLevel.Warning)
@@ -89,6 +91,24 @@ public static class ServiceExtensions
         })
         .AddScoped<JwtTokenProvider>()
         .AddScoped<TokenValidationService>();
+
+        Assembly.GetCallingAssembly().DefinedTypes
+            .Where(x => x.GetCustomAttribute<DependencyAttribute>() != null)
+            .ToList()
+            .ForEach(type =>
+            {
+                var attr = type.GetCustomAttribute<DependencyAttribute>();
+
+                if (attr!.BaseType != null)
+                {
+                    services.Add(new ServiceDescriptor(attr.BaseType, type, attr.Lifetime));
+                }
+                else
+                {
+                    services.Add(new ServiceDescriptor(type, type, attr.Lifetime));
+                }
+            });
+
 
         return services;
     }

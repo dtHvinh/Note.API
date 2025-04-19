@@ -6,7 +6,7 @@ public class GetNoAuthTest : EndpointWithoutRequest<string>
 {
     public override void Configure()
     {
-        Get("/api/test/no-auth");
+        Get("test/no-auth");
         AllowAnonymous();
     }
 

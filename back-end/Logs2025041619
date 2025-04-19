@@ -1,2 +1,0 @@
-2025-04-16 19:39:15.246 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
-2025-04-16 19:39:15.488 +07:00 [INF] Applying migration '20250416123845_AddBlock'.
