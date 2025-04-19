@@ -7,5 +7,9 @@ meta {
 get {
   url: {{url}}/api/test/no-auth
   body: none
-  auth: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjIiLCJuYmYiOjE3NDUwNTQ4NTEsImV4cCI6MTc0NTA1NTc1MSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzA1MCIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjcwNTEifQ.7VlOHHSk947dPruN2pzkeF5vc4dmKJF0bqRzlh_OWww
 }

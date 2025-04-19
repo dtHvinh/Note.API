@@ -49,18 +49,24 @@ public static class ServiceExtensions
 
     public static IServiceCollection ConfigureAuth(this IServiceCollection services)
     {
+        var aud = Configuration["JwtOptions:Aud"]?.Split(',')!;
+        var iss = Configuration["JwtOptions:Iss"]?.Split(',')!;
+
         services.AddAuthentication(options =>
         {
             options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
             options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
         })
+
             .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
             {
                 options.TokenValidationParameters = new()
                 {
                     ValidateAudience = true,
+                    ValidAudiences = aud,
                     ValidateIssuer = true,
+                    ValidIssuers = iss,
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtOptions:SecretKey"]!)),
                     ClockSkew = TimeSpan.Zero

@@ -8,10 +8,10 @@ builder.Services.AddFastEndpoints();
 builder.Services.WithConfiguration(builder.Configuration);
 builder.Services.ConfigureOptions();
 builder.Services.ConfigureLogging();
-builder.Services.ConfigureAuth();
 builder.Services.ConfigureDependencies();
 builder.Services.ConfigureDatabase();
 builder.Services.ConfigureHttpClients();
+builder.Services.ConfigureAuth();
 
 builder.Services.AddCors(options =>
 {
